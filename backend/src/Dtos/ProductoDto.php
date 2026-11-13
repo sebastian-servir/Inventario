@@ -19,3 +19,19 @@ class CrearProductoDto
     #[Assert\PositiveOrZero(message: "el precio no puede ser cero")]
     public float $precio;
 }
+
+class ActualizarProductoDto
+{
+    public ?int $categoria;
+
+    #[Assert\NotBlank(message: "El nombre no puede quedar vacio")]
+    public ?string $nombre = null;
+
+    #[Assert\NotBlank(message: "La cantidad no puede quedar vacia")]
+    #[Assert\PositiveOrZero(message: "La cantidad no puede ser cero")]
+    public ?int $cantidad = null;
+
+    #[Assert\NotBlank(message: "El precio no puede quedar vacio")]
+    #[Assert\PositiveOrZero(message: "el precio no puede ser cero")]
+    public ?float $precio = null;
+}
