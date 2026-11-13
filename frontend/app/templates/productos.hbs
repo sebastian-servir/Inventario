@@ -1,0 +1,18 @@
+{{page-title "Productos"}}
+<center>
+    <h1>Productos</h1>
+</center>
+
+<ul>
+    {{#each @model as |producto|}}
+    
+    {{#if producto.pocasExistencias}}
+    <li>{{pruducto.nombre}}: Quedan pocas Existencias</li>
+    {{else}}
+    <li>{{producto.nombre}}</li>
+    {{/if}}
+    
+    {{else}}
+    <li>No hay productos</li>
+    {{/each}}
+</ul>
