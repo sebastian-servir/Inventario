@@ -1,0 +1,8 @@
+{{#if @model}}
+    {{page-title @model.name}}
+    <h2>{{@model.nombre}}</h2>
+    <p>Cantidad: {{@model.cantidad}}</p>
+    <p>Precio: {{@model.precio}}</p>
+{{else}}
+    <p>Producto no encontrado</p>
+{{/if}}

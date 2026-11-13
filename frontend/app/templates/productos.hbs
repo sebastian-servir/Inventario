@@ -6,13 +6,13 @@
 <ul>
     {{#each @model as |producto|}}
     
-    {{#if producto.pocasExistencias}}
-    <li>{{pruducto.nombre}}: Quedan pocas Existencias</li>
-    {{else}}
-    <li>{{producto.nombre}}</li>
-    {{/if}}
-    
+    <li>
+        <LinkTo @route="productos.producto" @model={{producto.id}}>
+            {{producto.nombre}}
+        </LinkTo>
+    </li>
     {{else}}
     <li>No hay productos</li>
     {{/each}}
 </ul>
+{{outlet}}

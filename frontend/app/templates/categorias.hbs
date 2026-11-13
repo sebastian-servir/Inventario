@@ -1,2 +1,11 @@
 {{page-title "Categorias"}}
-{{outlet}}
+<center>
+    <h1>Categorias</h1>
+</center>
+<ul>
+    {{#each @model as |categoria|}}
+    <li>
+        {{categoria.name}}
+    </li>
+    {{/each}}
+</ul>
