@@ -1,7 +1,13 @@
 import Route from '@ember/routing/route';
 
 export default class CategoriasRoute extends Route {
-  model() {
-    return [{ id: 1, name: 'Perifericos' }];
+  async model() {
+    let response = await fetch('/api/categorias');
+
+    if (!response.ok) {
+      throw new Error('No se pudieron cargar las categorias');
+    }
+
+    return response.json();
   }
 }
