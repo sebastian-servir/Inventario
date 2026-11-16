@@ -32,7 +32,7 @@ final class CategoriaController extends AbstractController
     {
         $categorias = $this->categoriaRepository->findAll();
 
-        return $this->json($categorias, Response::HTTP_OK, [], ["ignored_attributes"=>["producto"]]);
+        return $this->json($categorias, Response::HTTP_OK, [], ["ignored_attributes"=>["productos"]]);
     }
 
     #[Route("/{id}", name: "show", methods: ["GET"])]
@@ -42,7 +42,7 @@ final class CategoriaController extends AbstractController
             return $this->json(["error"=>"not found"], Response::HTTP_NOT_FOUND);
         }
 
-        return $this->json($categoria, Response::HTTP_OK);
+        return $this->json($categoria, Response::HTTP_OK, [], ["idnored_attributes"=>["productos"]]);
     }
 
     #[Route("", name: "create", methods: ["POST"])]
@@ -62,7 +62,7 @@ final class CategoriaController extends AbstractController
         $this->em->persist($categoria);
         $this->em->flush();
 
-        return $this->json($categoria, Response::HTTP_CREATED);
+        return $this->json($categoria, Response::HTTP_CREATED, [], ["idnored_attributes"=>["productos"]]);
     }
 
     #[Route("/{id}", name: "update", methods: ["PUT", "PATCH"])]
@@ -87,7 +87,7 @@ final class CategoriaController extends AbstractController
         $this->em->persist($categoria);
         $this->em->flush();
 
-        return $this->json($categoria);
+        return $this->json($categoria, Response::HTTP_ACCEPTED, [], ["idnored_attributes"=>["productos"]]);
     }
 
     #[Route("/{id}", name: "delete", methods: ["DELETE"])]
