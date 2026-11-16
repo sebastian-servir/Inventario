@@ -7,6 +7,11 @@
     </div>
 
     <div>
+        <label for="precio">Precio</label>
+        <Input id="precio" @type="number" @value={{this.precio}} min="0" step="0.01" required />
+    </div>
+
+    <div>
         <label for="cantidad">Cantidad</label>
         <Input id="cantidad" @type="number" @value={{this.cantidad}} min="0" step="1" required/>
     </div>
@@ -21,7 +26,6 @@
     {{/if}}
 
     <button type="submit" disabled={{this.guardando}}>
-        {{#if this.guardando "Guardando..." "Guardar"}}
+        {{if this.guardando "Guardando..." "Guardar"}}
     </button>
 </form>
-{{outlet}}
