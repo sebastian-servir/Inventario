@@ -14,6 +14,11 @@ export default class ProductosNuevoController extends Controller {
   @tracked guardando = false;
 
   @action
+  seleccionarCategoria(event) {
+    this.categoria = event.target.value;
+  } 
+
+  @action
   async guardar(event) {
     event.preventDefault();
 

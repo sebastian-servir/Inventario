@@ -16,10 +16,15 @@
         <Input id="cantidad" @type="number" @value={{this.cantidad}} min="0" step="1" required/>
     </div>
 
-    <div>
-        <label for="categoria">Categoria</label>
-        <Input id="categoria" @type="number" @value={{this.categoria}} min="1" step="1" required/>
-    </div>
+    <select id="categoria" required {{on "change" this.seleccionarCategoria}}>
+        <option value="">Selecciona una categoria</option>
+
+        {{#each @model as |categoria|}}
+        <option value={{categoria.id}}>
+            {{categoria.nombre}}
+        </option>
+        {{/each}}
+    </select>
 
     {{#if this.error}}
         <p role="alert">{{this.error}}</p>
