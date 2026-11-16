@@ -1,2 +1,27 @@
-{{page-title "Nuevo"}}
+{{page-title "Nuevo producto"}}
+<h2>Nuevo Producto</h2>
+<form {{on "submit" this.guardar}}>
+    <div>
+        <label for="nombre">Nombre</label>
+        <Input id="nombre" @value={{this.nombre}} required />
+    </div>
+
+    <div>
+        <label for="cantidad">Cantidad</label>
+        <Input id="cantidad" @type="number" @value={{this.cantidad}} min="0" step="1" required/>
+    </div>
+
+    <div>
+        <label for="categoria">Categoria</label>
+        <Input id="categoria" @type="number" @value={{this.categoria}} min="1" step="1" required/>
+    </div>
+
+    {{#if this.error}}
+        <p role="alert">{{this.error}}</p>
+    {{/if}}
+
+    <button type="submit" disabled={{this.guardando}}>
+        {{#if this.guardando "Guardando..." "Guardar"}}
+    </button>
+</form>
 {{outlet}}
