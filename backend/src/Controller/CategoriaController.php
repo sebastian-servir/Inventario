@@ -87,7 +87,7 @@ final class CategoriaController extends AbstractController
         $this->em->persist($categoria);
         $this->em->flush();
 
-        return $this->json($categoria, Response::HTTP_ACCEPTED, [], ["idnored_attributes"=>["productos"]]);
+        return $this->json($categoria, Response::HTTP_ACCEPTED, [], ["ignored_attributes"=>["productos"]]);
     }
 
     #[Route("/{id}", name: "delete", methods: ["DELETE"])]

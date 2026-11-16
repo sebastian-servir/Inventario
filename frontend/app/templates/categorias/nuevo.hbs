@@ -1,2 +1,16 @@
-{{page-title "Nuevo"}}
-{{outlet}}
+{{page-title "Nueva Categoria"}}
+
+<h2>Nueva categoria</h2>
+<form {{on "submit" this.guardar}}>
+    <div>
+        <label for="nombre">Nombre</label>
+        <Input id="nombre" @value={{this.nombre}} required />
+    </div>
+
+    {{#if this.error}}
+        <p role="alert">{{this.error}}</p>
+    {{/if}}
+    <button type="submit" disabled={{this.guardando}}>
+        {{if this.guardando "Guardando..." "Guardar"}}
+    </button>
+</form>

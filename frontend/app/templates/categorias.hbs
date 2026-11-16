@@ -5,7 +5,12 @@
 <ul>
     {{#each @model as |categoria|}}
     <li>
-        {{categoria.nombre}}
+        ({{categoria.id}}) {{categoria.nombre}}
     </li>
     {{/each}}
+
+    <li>
+        <LinkTo @route="categorias.nuevo">Agregar una nueva categoria</LinkTo>
+    </li>
 </ul>
+{{outlet}}

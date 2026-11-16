@@ -4,7 +4,7 @@
     <p>Cantidad: {{@model.cantidad}}</p>
     <p>Precio: {{@model.precio}}</p>
     {{#each @model.categoria as |categoria|}}
-        <li>{{categoria.nombre}}</li>
+        <li>Categoria: {{categoria.nombre}}</li>
     {{else}}
         <li>Sin categoria</li>
     {{/each}}

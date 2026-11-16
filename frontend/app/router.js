@@ -10,7 +10,6 @@ Router.map(function () {
   this.route('productos', function () {
     this.route('nuevo');
     this.route('producto', { path: '/:producto_id' });
-
   });
   this.route('categorias', function () {
     this.route('nuevo');

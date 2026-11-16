@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import { action } from "@ember/object";
 
 export default class CategoriasRoute extends Route {
   async model() {
@@ -9,5 +10,10 @@ export default class CategoriasRoute extends Route {
     }
 
     return response.json();
+  }
+
+  @action
+  reacargarCategorias() {
+    this.refresh();
   }
 }

@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import { action } from "@ember/object";
 
 export default class ProductosRoute extends Route {
   async model() {
@@ -9,5 +10,9 @@ export default class ProductosRoute extends Route {
     }
 
     return response.json();
+  }
+  @action
+  recargarProductos() {
+    this.refresh();
   }
 }
