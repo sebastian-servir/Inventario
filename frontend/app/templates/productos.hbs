@@ -14,5 +14,9 @@
     {{else}}
     <li>No hay productos</li>
     {{/each}}
+
+    <LinkTo @route="productos.nuevo">
+        Agregar producto
+    </LinkTo>
 </ul>
 {{outlet}}
