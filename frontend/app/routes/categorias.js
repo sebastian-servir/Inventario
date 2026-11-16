@@ -13,7 +13,7 @@ export default class CategoriasRoute extends Route {
   }
 
   @action
-  reacargarCategorias() {
+  recargarCategorias() {
     this.refresh();
   }
 }
