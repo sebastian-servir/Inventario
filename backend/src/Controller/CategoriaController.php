@@ -32,7 +32,7 @@ final class CategoriaController extends AbstractController
     {
         $categorias = $this->categoriaRepository->findAll();
 
-        return $this->json($categorias, Response::HTTP_OK, [], ["ignored_attributes"=>["productos"]]);
+        return $this->json($categorias, Response::HTTP_OK, [], ["ignored_attributes"=>["categoria"]]);
     }
 
     #[Route("/{id}", name: "show", methods: ["GET"])]

@@ -3,6 +3,8 @@
     <h1>Categorias</h1>
 </center>
 <ul>
+    <LinkTo @route="index">Ir al inicio</LinkTo>
+    <br>
     {{#each @model as |categoria|}}
     <li>
         ({{categoria.id}}) {{categoria.nombre}}

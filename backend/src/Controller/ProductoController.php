@@ -41,7 +41,7 @@ final class ProductoController extends AbstractController
             return $this->json(["error"=>"not found"], Response::HTTP_OK);
         }
 
-        return $this->json($producto, Response::HTTP_OK, [], ["ignored_attributes"=>["productos"]]);
+        return $this->json($producto, Response::HTTP_OK, [], ["ignored_attributes"=>["categoria"]]);
     }
 
     #[Route("", name: "create", methods: ["POST"])]
@@ -63,7 +63,7 @@ final class ProductoController extends AbstractController
         $this->em->persist($producto);
         $this->em->flush();
 
-        return $this->json($producto, Response::HTTP_CREATED, [], ['ignored_attributes' => ['productos']]);
+        return $this->json($producto, Response::HTTP_CREATED, [], ['ignored_attributes' => ['categoria']]);
     }
 
     #[Route('/{id}', name: 'update', methods: ['PUT', 'PATCH'])]
@@ -94,7 +94,7 @@ final class ProductoController extends AbstractController
             $producto,
             Response::HTTP_OK,
             [],
-            ['ignored_attributes' => ['productos']],
+            ['ignored_attributes' => ['categoria']],
         );
     }
 

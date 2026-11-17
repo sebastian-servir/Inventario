@@ -10,4 +10,14 @@ export default class ProductosNuevoRoute extends Route {
 
         return response.json();
     }
+
+    resetController(controller, isExisting) {
+        if (isExisting) {
+            controller.nombre = "";
+            controller.cantidad = "";
+            controller.precio = "";
+            controller.categoria = "";
+            controller.error = "";
+        }
+    }
 }
