@@ -16,7 +16,7 @@ export default class ProductosNuevoController extends Controller {
   @action
   seleccionarCategoria(event) {
     this.categoria = event.target.value;
-  } 
+  }
 
   @action
   async guardar(event) {
@@ -58,7 +58,7 @@ export default class ProductosNuevoController extends Controller {
       this.categoria = '';
 
       await this.router.transitionTo('productos');
-      this.send("recargarProductos");
+      this.send('recargarProductos');
     } catch (error) {
       this.error = error.message;
     } finally {
